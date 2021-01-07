@@ -1,0 +1,33 @@
+body {
+  padding: 20px;
+}
+
+h1 {
+  font-size: 5rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h1,
+h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.bordered {
+  border: 1px solid white;
+}
+
+.container {
+  background-color: rgb(222, 222, 222);
+  padding: 30px;
+  border-radius: 10px;
+}
+
+.square {
+  padding-bottom: 100%;
+}

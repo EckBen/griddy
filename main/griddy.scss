@@ -1,0 +1,483 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* End Meyers Reset */
+
+
+
+
+
+@import "../config/config";
+
+// DIV specific classes
+// Class to clear any styles set on container level
+.container div.empty {
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  font-size: 1rem;
+  color: black;
+}
+
+// Background color classes
+@each $class, $color in $colors {
+  .container div.bg-#{$class} {
+    background-color: $color;
+  }
+}
+
+// Border color classes
+@each $class, $color in $colors {
+  .container div.bor-c-#{$class} {
+    border-color: $color;
+  }
+}
+
+// Border style classes
+@each $class, $style in $borders {
+  .container div.bor-s-#{$class} {
+    border-style: $style;
+  }
+}
+
+// Border radius classes
+@for $i from $bor-radius-min through $bor-radius-max {
+  .container div.bor-rad-#{$i},
+  .container div.bor-rad-#{$i} > * {
+    border-radius: #{$i}px;
+  }
+}
+
+// Special class to make content circle shape
+.container div.bor-rad-circle,
+.container div.bor-rad-circle > * {
+  border-radius: 50%;
+}
+
+// Border-width classes, 1px-15px
+@for $i from $bor-width-min through $bor-width-max {
+  .container div.bor-w-#{$i} {
+    border-width: #{$i}px;
+  }
+}
+
+// Column span classes
+@for $i from 1 through 12 {
+  [class~="c-#{$i}"] {
+    grid-column: span $i;
+  }
+}
+
+// Padding classes
+@for $i from $padding-min through $padding-max {
+  $pad: $i * $padding-increment;
+
+  .container div.p-#{$pad} {
+    padding: #{$pad}px;
+  }
+
+  .container div.p-l-#{$pad} {
+    padding-left: #{$pad}px;
+  }
+
+  .container div.p-r-#{$pad} {
+    padding-right: #{$pad}px;
+  }
+
+  .container div.p-t-#{$pad} {
+    padding-top: #{$pad}px;
+  }
+
+  .container div.p-b-#{$pad} {
+    padding-bottom: #{$pad}px;
+  }
+
+  .container div.p-lr-#{$pad} {
+    padding-left: #{$pad}px;
+    padding-right: #{$pad}px;
+  }
+
+  .container div.p-tb-#{$pad} {
+    padding-top: #{$pad}px;
+    padding-bottom: #{$pad}px;
+  }
+}
+
+// Font size classes
+@for $i from 0 through ($font-size-number-of-steps - 1) {
+  $fs: $i * $font-size-increment + $font-size-base;
+  $size-name: $i + 1;
+
+  .container div.t-rem-#{$size-name} {
+    font-size: #{$fs}rem;
+  }
+
+  .container div.t-em-#{$size-name} {
+    font-size: #{$fs}em;
+  }
+}
+
+// Text color classes
+@each $class, $color in $colors {
+  .container div.t-c-#{$class} {
+    color: $color;
+  }
+}
+
+// Text alignment classes
+@each $class, $align in $alignments {
+  .container div.t-a-#{$class} {
+    text-align: $align;
+  }
+}
+
+// Container specific classes
+// Classes set on container apply to children as well
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(calc(1 / 12 * 100%), 1fr));
+
+  @each $class, $color in $colors {
+    &.bg-#{$class} > * {
+      background-color: $color;
+    }
+  }
+
+  @each $class, $color in $colors {
+    &.bor-c-#{$class} > * {
+      border-color: $color;
+    }
+  }
+
+  @each $class, $style in $borders {
+    &.bor-s-#{$class} > * {
+      border-style: $style;
+    }
+  }
+  
+  @for $i from $bor-radius-min through $bor-radius-max {
+    &.bor-rad-#{$i} * {
+      border-radius: #{$i}px;
+    }
+  }
+
+  &.bor-rad-circle * {
+    border-radius: 50%;
+  }
+
+  @for $i from $bor-width-min through $bor-width-max {
+    &.bor-w-#{$i} > * {
+      border-width: #{$i}px;
+    }
+  }
+  
+  // Gap-size classes
+  @for $i from $gap-min through $gap-max {
+    $gap: $i * $gap-increment;
+    $offset: $gap * 11px;
+    
+    &.gap-#{$gap} {
+      grid-gap: #{$gap}px;
+      grid-template-columns: repeat(12, minmax(calc(1 / 12 * 100% - #{$offset}), 1fr));
+    }
+  }
+
+  // Margin size classes
+  @for $i from $margin-min through $margin-max {
+    $margin: $i * $margin-increment;
+
+    &.m-t-#{$margin} {
+      margin-top: #{$margin}px;
+    }
+    
+    &.m-r-#{$margin} {
+      margin-right: #{$margin}px;
+    }
+
+    &.m-b-#{$margin} {
+      margin-bottom: #{$margin}px;
+    }
+
+    &.m-l-#{$margin} {
+      margin-left: #{$margin}px;
+    }
+
+    &.m-tb-#{$margin} {
+      margin-top: #{$margin}px;
+      margin-bottom: #{$margin}px;
+    }
+
+    &.m-lr-#{$margin} {
+      margin-left: #{$margin}px;
+      margin-right: #{$margin}px;
+    }
+
+    &.m-#{$margin} {
+      margin: #{$margin}px;
+    }
+  }
+
+  @for $i from $padding-min through $padding-max {
+    $pad: $i * $padding-increment;
+  
+    &.p-#{$pad} > * {
+      padding: #{$pad}px;
+    }
+  
+    &.p-l-#{$pad} > * {
+      padding-left: #{$pad}px;
+    }
+  
+    &.p-r-#{$pad} > * {
+      padding-right: #{$pad}px;
+    }
+  
+    &.p-t-#{$pad} > * {
+      padding-top: #{$pad}px;
+    }
+  
+    &.p-b-#{$pad} > * {
+      padding-bottom: #{$pad}px;
+    }
+  
+    &.p-lr-#{$pad} > * {
+      padding-left: #{$pad}px;
+      padding-right: #{$pad}px;
+    }
+  
+    &.p-tb-#{$pad} > * {
+      padding-top: #{$pad}px;
+      padding-bottom: #{$pad}px;
+    }
+  }
+
+  @for $i from 0 through ($font-size-number-of-steps - 1) {
+    $fs: $i * $font-size-increment + $font-size-base;
+    $size-name: $i + 1;
+  
+    &.t-rem-#{$size-name} > * {
+      font-size: #{$fs}rem;
+    }
+  
+    &.t-em-#{$size-name} > * {
+      font-size: #{$fs}em;
+    }
+  }
+  
+  @each $class, $color in $colors {
+    &.t-c-#{$class} > * {
+      color: $color;
+    }
+  }
+  
+  @each $class, $align in $alignments {
+    &.t-a-#{$class} > * {
+      text-align: $align;
+    }
+  }
+}
+
+
+// Media queries
+@each $name, $size in $breaks {
+  @media screen and (min-width: $size) {
+    // Allows changing of column span
+    @for $i from 1 through 12 {
+      [class~="c-#{$i}-#{$name}"] {
+        grid-column: span $i;
+      }
+    }
+
+    // Allows for changing padding size
+    @for $i from $padding-min through $padding-max {
+      $pad: $i * $padding-increment;
+
+      .container div.p-#{$pad}-#{$name} {
+        padding: #{$pad}px;
+      }
+
+      .container div.p-l-#{$pad}-#{$name} {
+        padding-left: #{$pad}px;
+      }
+
+      .container div.p-r-#{$pad}-#{$name} {
+        padding-right: #{$pad}px;
+      }
+
+      .container div.p-t-#{$pad}-#{$name} {
+        padding-top: #{$pad}px;
+      }
+
+      .container div.p-b-#{$pad}-#{$name} {
+        padding-bottom: #{$pad}px;
+      }
+
+      .container div.p-lr-#{$pad}-#{$name} {
+        padding-left: #{$pad}px;
+        padding-right: #{$pad}px;
+      }
+
+      .container div.p-tb-#{$pad}-#{$name} {
+        padding-top: #{$pad}px;
+        padding-bottom: #{$pad}px;
+      }
+    }
+
+    // Allows changing of text size
+    @for $i from 0 through ($font-size-number-of-steps - 1) {
+      $fs: $i * $font-size-increment + $font-size-base;
+      $size-name: $i + 1;
+    
+      .container div.t-rem-#{$size-name}-#{$name} {
+        font-size: #{$fs}rem;
+      }
+    
+      .container div.t-em-#{$size-name}-#{$name} {
+        font-size: #{$fs}em;
+      }
+    }
+    
+    .container {
+      // Allows changing of gap size
+      @for $i from $gap-min through $gap-max {
+        $gap: $i * $gap-increment;
+        $offset: $gap * 11px;
+  
+        &[class~="gap-#{$gap}-#{$name}"] {
+          grid-gap: #{$gap}px;
+          grid-template-columns: repeat(12, minmax(calc(1 / 12 * 100% - #{$offset}), 1fr));
+        }
+      }
+
+      // Allows changing of container level font size
+      @for $i from 0 through ($font-size-number-of-steps - 1) {
+        $fs: $i * $font-size-increment + $font-size-base;
+        $size-name: $i + 1;
+      
+        &.t-rem-#{$size-name}-#{$name} > * {
+          font-size: #{$fs}rem;
+        }
+      
+        &.t-em-#{$size-name}-#{$name} > * {
+          font-size: #{$fs}em;
+        }
+      }
+
+      // Allows for changing of margin size
+      @for $i from $margin-min through $margin-max {
+        $margin: $i * $margin-increment;
+    
+        &.m-t-#{$margin}-#{$name} {
+          margin-top: #{$margin}px;
+        }
+        
+        &.m-r-#{$margin}-#{$name} {
+          margin-right: #{$margin}px;
+        }
+    
+        &.m-b-#{$margin}-#{$name} {
+          margin-bottom: #{$margin}px;
+        }
+    
+        &.m-l-#{$margin}-#{$name} {
+          margin-left: #{$margin}px;
+        }
+    
+        &.m-tb-#{$margin}-#{$name} {
+          margin-top: #{$margin}px;
+          margin-bottom: #{$margin}px;
+        }
+    
+        &.m-lr-#{$margin}-#{$name} {
+          margin-left: #{$margin}px;
+          margin-right: #{$margin}px;
+        }
+    
+        &.m-#{$margin}-#{$name} {
+          margin: #{$margin}px;
+        }
+      }
+
+      @for $i from $padding-min through $padding-max {
+        $pad: $i * $padding-increment;
+      
+        &.p-#{$pad}-#{$name} > * {
+          padding: #{$pad}px;
+        }
+      
+        &.p-l-#{$pad}-#{$name} > * {
+          padding-left: #{$pad}px;
+        }
+      
+        &.p-r-#{$pad}-#{$name} > * {
+          padding-right: #{$pad}px;
+        }
+      
+        &.p-t-#{$pad}-#{$name} > * {
+          padding-top: #{$pad}px;
+        }
+      
+        &.p-b-#{$pad}-#{$name} > * {
+          padding-bottom: #{$pad}px;
+        }
+      
+        &.p-lr-#{$pad}-#{$name} > * {
+          padding-left: #{$pad}px;
+          padding-right: #{$pad}px;
+        }
+      
+        &.p-tb-#{$pad}-#{$name} > * {
+          padding-top: #{$pad}px;
+          padding-bottom: #{$pad}px;
+        }
+      }
+    }
+  }
+}

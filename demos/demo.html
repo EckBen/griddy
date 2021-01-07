@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/css/griddy.css">
+  <link rel="stylesheet" href="/demos/demo.css">
+</head>
+<body>
+  <div>
+    <h1>Demo</h1>
+  </div>
+
+  <div>
+    <h2>Column sizes, borders, backgrounds, padding, and text-color:</h2>
+  </div>
+
+  <div class="container gap-4 bg-mango bor-c-red bor-s-solid bor-w-1 t-rem-2 t-a-c t-c-black p-10">
+    <div class="c-1 t-c-white">
+      <div>c-1</div>
+    </div>
+    <div class="c-11 empty"></div>
+
+    <div class="c-2 bg-white">
+      <div>c-2</div>
+    </div>
+    <div class="c-10 empty"></div>
+
+    <div class="c-3 bor-c-black bor-s-dotted bor-w-3">
+      <div>c-3</div>
+    </div>
+    <div class="c-9 empty"></div>
+
+    <div class="c-4 bor-rad-5">
+      <div>c-4</div>
+    </div>
+    <div class="c-8 empty"></div>
+
+    <div class="c-5 p-20">
+      <div>c-5</div>
+    </div>
+    <div class="c-7 empty"></div>
+
+    <div class="c-6 p-2">
+      <div>c-6</div>
+    </div>
+    <div class="c-6 empty"></div>
+
+    <div class="c-7">
+      <div>c-7</div>
+    </div>
+    <div class="c-5 empty"></div>
+
+    <div class="c-8">
+      <div>c-8</div>
+    </div>
+    <div class="c-4 empty"></div>
+
+    <div class="c-9">
+      <div>c-9</div>
+    </div>
+    <div class="c-3 empty"></div>
+
+    <div class="c-10">
+      <div>c-10</div>
+    </div>
+    <div class="c-2 empty"></div>
+
+    <div class="c-11">
+      <div>c-11</div>
+    </div>
+    <div class="c-1 empty"></div>
+
+    <div class="c-12">
+      <div>c-12</div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Circle radius and Spacing:</h2>
+  </div>
+
+  <div class="container bg-azure m-20 bor-rad-circle">
+
+    <div class="c-1 empty"></div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1 empty"></div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1 empty"></div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1 empty"></div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1 empty"></div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1 empty"></div>
+
+  </div>
+
+  <div>
+    <h2>Border-radius, overwriting container styles, and column gaps:</h2>
+  </div>
+
+  <div class="container bg-mango bor-c-red bor-w-1 bor-s-solid m-20 gap-10 bor-rad-10">
+
+    <div class="c-1 bor-rad-circle">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+    
+    <div class="c-1">
+      <div class="square"></div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Text alignment and sizing:</h2>
+  </div>
+
+  <div class="container bg-gray t-c-white t-a-c t-em-3 gap-4 m-20">
+    <div class="c-4 t-a-l">c-4</div>
+    <div class="c-4 t-em-5">c-4</div>
+    <div class="c-4 t-a-r">c-4</div>
+  </div>
+
+  <div>
+    <h2>Responsive gap, text-size, and margin:</h2>
+  </div>
+
+  <div class="container gap-10 gap-40-lg m-lr-40 m-lr-10-lg bg-violet t-c-white t-a-c">
+    <div class="c-4 t-rem-3 t-rem-6-lg">
+      <div>c-4</div>
+    </div>
+    <div class="c-4 t-rem-6 t-rem-3-lg">
+      <div>c-4</div>
+    </div>
+    <div class="c-4 t-rem-3 t-rem-6-lg">
+      <div>c-4</div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Responsive column size:</h2>
+  </div>
+
+  <div class="container gap-10 m-20 bg-black t-c-white t-a-c">
+    <div class="c-4 c-2-lg t-rem-2">
+      <div>c-4 then c-2 at 'lg'</div>
+    </div>
+    <div class="c-4 c-12-m c-11-lg t-rem-2">
+      <div>c-4 then c-12 at 'm' and c-11 at 'lg'</div>
+    </div>
+    <div class="c-4 c-10-s c-8-lg c-12-xlg t-rem-2">
+      <div>c-4 then c-10 at 's', c-8 at 'lg', and c-12 at 'xlg'</div>
+    </div>
+  </div>
+
+  <div>
+    <h2>Responsive padding:</h2>
+  </div>
+
+  <div class="container gap-10 m-20 bg-red t-c-white t-a-c p-10 p-20-lg">
+    <div class="c-4 t-rem-2">
+      <div class="bordered">c-4</div>
+    </div>
+    <div class="c-4 t-rem-2 p-10-lg">
+      <div class="bordered">c-4</div>
+    </div>
+    <div class="c-4 t-rem-2 p-0-lg">
+      <div class="bordered">c-4</div>
+    </div>
+  </div>
+</body>
+</html>

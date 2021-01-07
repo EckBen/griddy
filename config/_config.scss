@@ -1,0 +1,68 @@
+// See readme for documentation on making changes to configuration
+
+// Full list of border styles
+$borders: ("none": none,
+          "hidden": hidden,
+          "dotted": dotted,
+          "dashed": dashed,
+          "solid": solid,
+          "double": double,
+          "groove": groove,
+          "ridge": ridge,
+          "inset": inset,
+          "outset": outset);
+
+// Breakpoint sizes
+$breaks: ("xs": 0px,
+          "s": 576px,
+          "m": 768px,
+          "lg": 992px,
+          "xlg":1200px,
+          "xxlg":1400px);
+
+// Color options
+$colors: ("red": rgb(255,0,0),
+          "blue": rgb(0,0,255),
+          "green": rgb(0,255,0),
+          "black": rgb(0,0,0),
+          "gray": rgb(110,110,110),
+          "white": rgb(255,255,255),
+          "mango": #FFBE0B,
+          "orange": #FB5607,
+          "pink": #FF006E,
+          "violet": #8338EC,
+          "azure": #3A86FF);
+
+// Full list of text-align options
+$alignments: ("c": center,
+             "l": left,
+             "r": right,
+             "j": justify);
+
+// Changes range of available border radii
+$bor-radius-min: 0;
+$bor-radius-max: 20;
+
+// Changes range of available border widths
+$bor-width-min: 0;
+$bor-width-max: 15;
+
+// Changes range of available grid gaps
+$gap-min: 0;
+$gap-max: 50;
+$gap-increment: 2;
+
+// Changes range of available font sizes
+$font-size-base: 0.5;
+$font-size-increment: 1;
+$font-size-number-of-steps: 12;
+
+// Changes range of available margin sizes
+$margin-min: 0;
+$margin-max: 10;
+$margin-increment: 5;
+
+// Changes range of available padding sizes
+$padding-min: 0;
+$padding-max: 10;
+$padding-increment: 2;
