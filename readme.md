@@ -133,7 +133,7 @@ __\$font-size-\*__ generates classes using a similar technique, but keeps the na
 - __.t-rem-3__ : 2 rem
 ***
 ## Demo
-There is a picture of a demo page [here](../demos/demo.png).
+There is a picture of a demo page [here](../demo.png).
 
 For an active demo, run __demo.html__ in your browser. It highlights the different things that can be done with this framework and the __.html__ file can be used as a reference for how to use the framework.
 
