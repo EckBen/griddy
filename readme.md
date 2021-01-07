@@ -17,11 +17,11 @@ It was created using inspiration from Bootstrap framework in response to a proje
 ***
 ## Requirements
 There are two ways to use this framework.
-1. __No requirements__: To use the full framework with no customization you can download and import the __griddy.css__ file from the __/css__ directory. This is a precompiled stylesheet that contains the entire framework and is, therefore, quite long. It is recommended that you use option 2 if possible.
+1. __No requirements__: To use the full framework with no customization you can download and import the __griddy.min.css__ file from the __/css__ directory. This is a precompiled stylesheet that contains the entire framework and is, therefore, quite long. It is recommended that you use option 2 if possible.
 2. __Requires SASS compiler__: If you have the ability to compile __.scss__ files this is the option for you! After you clone the repository open __/config/_config.scss__. This file contains all of the variables that are used to generate classes for the framework. You can customize it by following the documentation below. By doing this you can greatly reduce the amount of CSS code generated.
 ***
 ## Usage
-Once you have a __griddy.css__ file and it is imported to your project, usage is simple. First, set a parent __div__ with __class="container"__. Inside this container set as many __div__ as you would like with __class="c-1"__ through __class="c-12"__. That's it!
+Once you have your own __griddy.css__ file or the provided __griddy.min.css__ file and it is imported to your project, usage is simple. First, set a parent __div__ with __class="container"__. Inside this container set as many __div__ as you would like with __class="c-1"__ through __class="c-12"__. That's it!
 
 ### Container specific classes
 Each of these classes cascade to the columns within the container they are set on. They will not work anything without __container__ class.
