@@ -133,8 +133,6 @@ __\$font-size-\*__ generates classes using a similar technique, but keeps the na
 - __.t-rem-3__ : 2 rem
 ***
 ## Demo
-There is a picture of a demo page [here](docs/demo.png).
-
-For an active demo, run __demo.html__ in your browser. It highlights the different things that can be done with this framework and the __.html__ file can be used as a reference for how to use the framework.
+A live demo can be found [here](https://eckben.github.io/griddy/ "Demo Page"). It highlights the different things that can be done with this framework and the __.html__ file can be used as a reference for how to use the framework. __demo.griddy.css__ is the framework file that is used to style the demo. The configuration file was optimized to reduced the size of this file, it is not the full default __.css__ file.
 
 Enjoy!!!
